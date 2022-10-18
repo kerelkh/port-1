@@ -10,7 +10,11 @@
             <p class="mt-2">Banner Square 1</p>
             <form action="/content/square/1" method="POST" enctype="multipart/form-data" class="form-square gap-3">
                 @csrf
+                @if($datas['square'][0]->images != '' || $datas['square'][0]->images != NULL)
                 <img src="{{ asset('storage/' . $datas['square'][0]->images) }}" alt="Banner temporary" id="img-temp-square" class="w-full">
+                @else
+                <img src="{{ asset('images/image-placeholder.png') }}" alt="Banner temporary" id="img-temp-square" class="w-full">
+                @endif
                 <div class="flex flex-col items-start gap-5 mt-5">
                     <input
                         type="file"
@@ -32,7 +36,11 @@
             <p class="mt-2">Banner Square 2</p>
             <form action="/content/square/2" method="POST" enctype="multipart/form-data" class="form-square gap-3">
                 @csrf
+                @if($datas['square'][1]->images != '' || $datas['square'][1]->images != NULL)
                 <img src="{{ asset('storage/' . $datas['square'][1]->images) }}" alt="Banner temporary" id="img-temp-square-2" class="w-full">
+                @else
+                <img src="{{ asset('images/image-placeholder.png') }}" alt="Banner temporary" id="img-temp-square-2" class="w-full">
+                @endif
                 <div class="flex flex-col items-start gap-5 mt-5">
                     <input
                         type="file"
@@ -54,7 +62,11 @@
             <p class="mt-2">Banner Square 3</p>
             <form action="/content/square/3" method="POST" enctype="multipart/form-data" class="form-square gap-3">
                 @csrf
+                @if($datas['square'][2]->images != '' || $datas['square'][2]->images != NULL)
                 <img src="{{ asset('storage/' . $datas['square'][2]->images) }}" alt="Banner temporary" id="img-temp-square-3" class="w-full">
+                @else
+                <img src="{{ asset('images/image-placeholder.png') }}" alt="Banner temporary" id="img-temp-square-3" class="w-full">
+                @endif
                 <div class="flex flex-col items-start gap-5 mt-5">
                     <input
                         type="file"
@@ -78,7 +90,11 @@
             <p class="mt-2">Banner Square 4</p>
             <form action="/content/square/4" method="POST" enctype="multipart/form-data" class="form-square gap-3">
                 @csrf
+                @if($datas['square'][3]->images != '' || $datas['square'][3]->images != NULL)
                 <img src="{{ asset('storage/' . $datas['square'][3]->images) }}" alt="Banner temporary" id="img-temp-square-4" class="w-full">
+                @else
+                <img src="{{ asset('images/image-placeholder.png') }}" alt="Banner temporary" id="img-temp-square-4" class="w-full">
+                @endif
                 <div class="flex flex-col items-start gap-5 mt-5">
                     <input
                         type="file"
@@ -100,7 +116,11 @@
             <p class="mt-2">Banner Square 5</p>
             <form action="/content/square/5" method="POST" enctype="multipart/form-data" class="form-square gap-3">
                 @csrf
+                @if($datas['square'][4]->images != '' || $datas['square'][4]->images != NULL)
                 <img src="{{ asset('storage/' . $datas['square'][4]->images) }}" alt="Banner temporary" id="img-temp-square-5" class="w-full">
+                @else
+                <img src="{{ asset('images/image-placeholder.png') }}" alt="Banner temporary" id="img-temp-square-5" class="w-full">
+                @endif
                 <div class="flex flex-col items-start gap-5 mt-5">
                     <input
                         type="file"
@@ -122,7 +142,11 @@
             <p class="mt-2">Banner Square 6</p>
             <form action="/content/square/6" method="POST" enctype="multipart/form-data" class="form-square gap-3">
                 @csrf
+                @if($datas['square'][5]->images != '' || $datas['square'][5]->images != NULL)
                 <img src="{{ asset('storage/' . $datas['square'][5]->images) }}" alt="Banner temporary" id="img-temp-square-6" class="w-full">
+                @else
+                <img src="{{ asset('images/image-placeholder.png') }}" alt="Banner temporary" id="img-temp-square-6" class="w-full">
+                @endif
                 <div class="flex flex-col items-start gap-5 mt-5">
                     <input
                         type="file"

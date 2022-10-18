@@ -22,7 +22,11 @@
         @forelse($datas['products'] as $product)
         <a href="/products/{{ $product->slug }}" class="w-[200px] p-2 transition rounded-lg">
             <div class="w-full aspect-square overflow-hidden">
+                @if($product->images != '' || $product->images != NULL)
                 <img src="{{ asset('storage/' . $product->images) }}" alt="" class="w-full object-cover">
+                @else
+                <img src="{{ asset('images/image-placeholder.png') }}" alt="" class="w-full object-cover">
+                @endif
             </div>
             <div class="my-2 flex flex-col gap-2">
                 <p class="line-clamp-2 font-serif text-sm capitalize">{{ $product->name }}</p>

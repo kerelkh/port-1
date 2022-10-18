@@ -28,8 +28,8 @@ class DatabaseSeeder extends Seeder
         $this->call(ReferralSeeder::class);
         $this->call(PortraitSeeder::class);
         $this->call(SquareSeeder::class);
-        $this->call(QuoteSeeder::class);
-        $this->call(ProductSeeder::class);
+        // $this->call(QuoteSeeder::class);
+        // $this->call(ProductSeeder::class);
 
     }
 }

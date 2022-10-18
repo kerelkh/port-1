@@ -28,10 +28,10 @@
         <div class="w-5/6 mx-auto flex justify-between items-stretch py-2">
             <a href="/" class="hover:text-blue-400 py-1 px-2 {{ (Request::is('/')) ? 'text-blue-400' : ''}}">Home</a>
             <a href="/articles" class="hover:text-blue-400 py-1 px-2 {{ (Request::is('articles')) ? 'text-blue-400' : ''}}">Article's</a>
-            <a href="/projects" class="hover:text-blue-400 py-1 px-2 {{ (Request::is('projects')) ? 'text-blue-400' : ''}}">Projects</a>
+            <a href="/projects" class="hover:text-blue-400 py-1 px-2 {{ (Request::is('projects')) ? 'text-blue-400' : ''}}">Project's</a>
             <a href="/quotes" class="hover:text-blue-400 py-1 px-2 ">Quote's</a>
             <a href="/gallery" class="hover:text-blue-400 py-1 px-2 {{ (Request::is('gallery')) ? 'text-blue-400' : ''}}">Gallery</a>
-            <a href="/products" class="hover:text-blue-400 py-1 px-2 ">Products</a>
+            <a href="/products" class="hover:text-blue-400 py-1 px-2 ">Product's</a>
         </div>
     </div>
 </div>

@@ -10,7 +10,12 @@
             <p class="mt-2">Banner Portrait 1</p>
             <form action="/content/portrait/1" method="POST" enctype="multipart/form-data" class="form-portrait flex gap-3">
                 @csrf
+                @if($datas['portrait'][0]->images != '' || $datas['portrait'][0]->images != NULL)
                 <img src="{{ asset('storage/' . $datas['portrait'][0]->images) }}" alt="Banner temporary" id="img-temp" class="w-1/2">
+                @else
+                <img src="{{ asset('images/image-placeholder.png') }}" alt="Banner temporary" id="img-temp" class="w-1/2">
+                @endif
+
                 <div class="flex flex-col items-start gap-5">
                     <input
                         type="file"
@@ -32,7 +37,11 @@
             <p class="mt-2">Banner Portrait 2</p>
             <form action="/content/portrait/2" method="POST" enctype="multipart/form-data" class="form-portrait flex gap-3">
                 @csrf
+                @if($datas['portrait'][1]->images != '' || $datas['portrait'][1]->images != NULL)
                 <img src="{{ asset('storage/' . $datas['portrait'][1]->images) }}" alt="Banner temporary" id="img-temp-2" class="w-1/2">
+                @else
+                <img src="{{ asset('images/image-placeholder.png') }}" alt="Banner temporary" id="img-temp-2" class="w-1/2">
+                @endif
                 <div class="flex flex-col items-start gap-5">
                     <input
                         type="file"

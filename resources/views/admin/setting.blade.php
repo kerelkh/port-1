@@ -74,7 +74,11 @@
                 @endif
                 <form action="/setting/update/banner" method="POST" enctype="multipart/form-data" class="flex gap-3">
                     @csrf
+                    @if($datas['landing-banner']->value != '' || $datas['landing-banner']->value != NULL)
                     <img src="{{ asset('storage/' . $datas['landing-banner']->value) }}" alt="Banner temporary" id="img-temp" class="w-1/2 aspect-video">
+                    @else
+                    <img src="{{ asset('images/image-placeholder.png') }}" alt="Banner temporary" id="img-temp" class="w-1/2">
+                    @endif
                     <div class="flex flex-col justify-between items-start gap-5">
                         <input
                             type="file"

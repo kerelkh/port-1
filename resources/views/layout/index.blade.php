@@ -56,19 +56,25 @@
     </style>
 </head>
 <body>
-    <div id="app" class="min-h-screen mb-10">
-        <div class="bg-gray-600 p-1 flex justify-end items-center divide-x text-xs text-gray-100 space-x-2">
-            <p class="px-1 tracking-wider"><i class="fa-regular fa-flag"></i> INDONESIA</p>
-            <P class="px-1"><i class="fa-solid fa-calendar-days"></i> {{ now()->format('d M Y') }}</P>
-        </div>
+    <div id="app" class="pb-10">
         <x-navtop></x-navtop>
-        @yield('content')
+        <div class="min-h-screen">
+            @yield('content')
+        </div>
+        @include('templates.loading')
+        <footer class="w-full bg-white border-t-2 mt-10">
+            <div class="w-5/6 mx-auto py-10 grid grid-cols-3">
+                <div class="col-span-1">
+                    <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-2/4">
+                    <p class="p-2 text-center text-gray-100 text-xs bg-gray-800">&copy; Copyright by Ringga.Net</p>
+                </div>
+                <div class="col-span-2">
+
+                </div>
+            </div>
+        </footer>
     </div>
 
-    @include('templates.loading')
-    <footer class="fixed bottom-0 w-full">
-        <p class="p-2 text-center text-gray-100 text-xs bg-gray-800">&copy; Copyright by Kerelka.com</p>
-    </footer>
 
     <script>
         $('document').ready(function() {

@@ -14,7 +14,7 @@
         </div>
         <div class="p-2 rounded-lg  bg-white shadow mb-5">
             <div class="flex justify-between">
-                <button data-toggle='referral-detail' class="view-btn bg-green-600 text-white hover:bg-green-800 transition p-2 rounded-lg ">View Referral.</button>
+                <button data-toggle='referral-detail' data-table="table-referral" class="view-btn bg-green-600 text-white hover:bg-green-800 transition p-2 rounded-lg ">View Referral.</button>
                 <button type="button" data-modal-toggle="referral-modal" class="view-modal-btn bg-gray-800 text-white hover:shadow-lg transition p-2 rounded-lg">Add Referral.</button>
             </div>
             @include('admin.partials.referral.referral')
