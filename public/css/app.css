@@ -1218,6 +1218,9 @@ input:checked + .toggle-bg {
 .w-auto {
   width: auto;
 }
+.w-1\/3 {
+  width: 33.333333%;
+}
 .w-\[720px\] {
   width: 720px;
 }
@@ -1226,9 +1229,6 @@ input:checked + .toggle-bg {
 }
 .w-3\/4 {
   width: 75%;
-}
-.w-1\/3 {
-  width: 33.333333%;
 }
 .w-64 {
   width: 16rem;

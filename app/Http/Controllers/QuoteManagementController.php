@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Log;
 use App\Models\Quote;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -32,6 +33,10 @@ class QuoteManagementController extends Controller
 
             if($result) {
                 DB::commit();
+                Log::create([
+                    'type' => 'create',
+                    'remark' => 'Create Quote'
+                ]);
                 return response()->json(['status' => 'Success', 'message' => 'CREATED.', 'data' => 'Quote create successfully.'], 201);
             }
 
@@ -72,6 +77,10 @@ class QuoteManagementController extends Controller
 
             if($result) {
                 DB::commit();
+                Log::create([
+                    'type' => 'delete',
+                    'remark' => 'Delete Quote'
+                ]);
                 return response()->json(['status' => '204', 'message' => 'DELETED.'], 204);
             }
 

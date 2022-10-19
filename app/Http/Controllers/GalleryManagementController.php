@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Log;
 use App\Models\Photo;
 use App\Services\FileUploadService;
 use Illuminate\Http\Request;
@@ -62,6 +63,10 @@ class GalleryManagementController extends Controller
 
             if($result) {
                 DB::commit();
+                Log::create([
+                    'type' => 'create',
+                    'remark' => 'Create Gallery ' . $validator['name']
+                ]);
                 return redirect('/admin/gallery')->with('store-photo-message', 'Photo has been uploaded.');
             }
 
@@ -96,6 +101,10 @@ class GalleryManagementController extends Controller
 
             if($result) {
                 DB::commit();
+                Log::create([
+                    'type' => 'update',
+                    'remark' => 'Update Gallery ' . $photo->name
+                ]);
                 return redirect("/admin/gallery")->with('update-photo-message', 'Update Photo Success');
             }
 
@@ -113,9 +122,14 @@ class GalleryManagementController extends Controller
         DB::beginTransaction();
         try{
             Storage::delete('public/' . $photo->images);
+            $namePhoto = $photo->name;
             $photo->delete();
 
             DB::commit();
+            Log::create([
+                'type' => 'delete',
+                'remark' => 'Delete Gallery ' . $namePhoto
+            ]);
             return redirect('/admin/gallery')->with('session-gallery-message', 'Success Delete Photo');
         } catch (\Exception $e) {
             DB::rollBack();

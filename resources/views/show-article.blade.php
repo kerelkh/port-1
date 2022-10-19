@@ -4,9 +4,9 @@
 <div class="w-5/6 mx-auto mt-5 grid grid-cols-6 gap-5 mb-20">
     <div class="col-span-4">
         <div class="flex justify-start items-center gap-2 mb-10">
-            <a href="/{{ $datas['article']->type }}s" class="capitalize"><i class="fa-regular fa-newspaper"></i> {{ $datas['article']->type }}</a>
+            <a href="/{{ $datas['article']->type }}s" class="capitalize flex justify-center items-center gap-2"><i class="fa-regular fa-newspaper"></i> {{ $datas['article']->type }}</a>
             <i class="fa-solid fa-caret-right"></i>
-            <p class="capitalize">{{ $datas['article']->title }}</p>
+            <p class="capitalize line-clamp-1">{{ $datas['article']->title }}</p>
         </div>
         <h1 class="font-serif text-5xl pr-10 mb-5 capitalize">{{ $datas['article']->title }}</h1>
         <div class="flex items-center space-x-2 text-gray-500 mb-5">

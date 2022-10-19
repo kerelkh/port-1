@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Log;
 use App\Models\User;
 use App\Models\Utility;
 use App\Services\FileUploadService;
@@ -39,6 +40,10 @@ class SettingController extends Controller
             ]);
 
             if($user){
+                Log::create([
+                    'type' => 'update',
+                    'remark' => 'Update Profil'
+                ]);
                 return redirect('/setting')->with('update-profile-message', 'Profile Update success.');
             }
         }
@@ -63,6 +68,10 @@ class SettingController extends Controller
             }
 
             if($result) {
+                Log::create([
+                    'type' => 'update',
+                    'remark' => 'Update Banner Landing Page'
+                ]);
                 return redirect('/setting')->with('update-banner-message', 'Update Landing Banner Success.');
             }
 

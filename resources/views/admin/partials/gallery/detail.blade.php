@@ -35,7 +35,7 @@
                             <span class="text-red-600 italic text-xs">* {{ $message }}</span>
                         @enderror
 
-                    <button type="submit" class="p-2 bg-blue-500 text-gray-50 rounded-xl hover:bg-blue-600">Update</button>
+                    <button type="submit" class="p-2 bg-blue-500 text-gray-50 rounded-xl hover:bg-blue-600">Create Photo</button>
                 </div>
             </form>
         </div>

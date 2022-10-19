@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductRequest;
+use App\Models\Log;
 use App\Models\Product;
 use App\Services\FileUploadService;
 use Illuminate\Http\Request;
@@ -88,6 +89,10 @@ class ProductManagementController extends Controller
 
                 if($result) {
                     DB::commit();
+                    Log::create([
+                        'type' => 'create',
+                        'remark' => 'Create Product' . strtolower($request->name),
+                    ]);
                     return back()->with('store-product-message', 'Product has been created.');
                 }
             }
@@ -123,6 +128,10 @@ class ProductManagementController extends Controller
             $product->save();
 
             DB::commit();
+            Log::create([
+                'type' => 'update',
+                'remark' => 'Update Product ' . $product->name,
+            ]);
             return response()->json(['status' => '204', 'message' => 'SUCCESS.', 'data' => 'Update Success.'], 204);
 
         }catch (\Exception $e) {
@@ -150,6 +159,10 @@ class ProductManagementController extends Controller
                 $product->save();
 
                 DB::commit();
+                Log::create([
+                    'type' => 'update',
+                    'remark' => 'Update Image Product ' . $product->name,
+                ]);
                 return redirect('/admin/products')->with('update-image-product-message', 'Update Image Success.');
             }
 
@@ -174,9 +187,14 @@ class ProductManagementController extends Controller
                 Storage::delete('public/' . $product->images);
             }
 
+            $nameProduct = $product->name;
             $result = $product->delete();
             if($result) {
                 DB::commit();
+                Log::create([
+                    'type' => 'delete',
+                    'remark' => 'Delete Product ' . $nameProduct
+                ]);
                 return redirect('/admin/products')->with('session-product-message', 'Product Deleted.');
             }
 

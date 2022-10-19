@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreReferralRequest;
 use App\Http\Requests\StoreSupportRequest;
+use App\Models\Log;
 use App\Models\PortraitBanner;
 use App\Models\Referral;
 use App\Models\SquareBanner;
@@ -51,6 +52,10 @@ class ContentController extends Controller
 
             if($result) {
                 DB::commit();
+                Log::create([
+                    'type' => 'create',
+                    'remark' => 'Create Support ' . $request->support_name
+                ]);
                 return response()->json(['status' => 'Success', 'message' => 'Created'], 201);
             }
 
@@ -68,9 +73,12 @@ class ContentController extends Controller
         if(!$support){
             return response()->json(['status' => '404', 'message' => 'BAD_REQUEST'], 404);
         }
-
+        $name = $support->name;
         $support->delete();
-
+        Log::create([
+            'type' => 'delete',
+            'remark' => 'Delete Support ' . $name
+        ]);
         return response()->json(['status' => '204', 'message' => 'DELETED'], 204);
     }
 
@@ -94,9 +102,12 @@ class ContentController extends Controller
         if(!$referral){
             return response()->json(['status' => '404', 'message' => 'BAD_REQUEST'], 404);
         }
-
+        $name = $referral->name;
         $referral->delete();
-
+        Log::create([
+            'type' => 'delete',
+            'remark' => 'Delete Referral ' . $name
+        ]);
         return response()->json(['status' => '204', 'message' => 'DELETED'], 204);
     }
 
@@ -110,6 +121,10 @@ class ContentController extends Controller
 
             if($result) {
                 DB::commit();
+                Log::create([
+                    'type' => 'create',
+                    'remark' => 'Create Referral ' . $request->referral_name
+                ]);
                 return response()->json(['status' => 'Success', 'message' => 'Created'], 201);
             }
 
@@ -132,6 +147,11 @@ class ContentController extends Controller
             ]);
         }
 
+        Log::create([
+            'type' => 'update',
+            'remark' => 'Update Portrait ' . $id
+        ]);
+
         return redirect('/content')->with('update-banner-message', 'Portrait banner ' . $id . ' has been updated.');
     }
 
@@ -145,6 +165,12 @@ class ContentController extends Controller
             $result = $Square->update([
                 'images' => $filename,
             ]);
+
+            Log::create([
+                'type' => 'update',
+                'remark' => 'Update Square ' . $id
+            ]);
+
             return redirect('/content')->with('update-banner-square-message', 'Square banner ' . $id . ' has been updated.');
         }
 

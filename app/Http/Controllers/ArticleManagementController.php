@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreArticleRequest;
 use App\Models\Article;
+use App\Models\Log;
 use App\Services\FileUploadService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -79,6 +80,10 @@ class ArticleManagementController extends Controller
 
             if($result) {
                 DB::commit();
+                Log::create([
+                    'type' => 'create',
+                    'remark' => 'Create ' . $request->type . ' ' . strtolower($request->title)
+                ]);
                 return redirect('/admin/articles/create')->with('store-article-message', $request->type . ' has been saved.');
             }
 
@@ -124,6 +129,10 @@ class ArticleManagementController extends Controller
             }
 
             DB::commit();
+            Log::create([
+                'type' => 'update',
+                'remark' => 'Update ' . $article->type . ' ' . strtolower($article->title)
+            ]);
             return response()->json(['status' => 'Success', 'message' => 'UPDATED.'],204);
 
         } catch (\Exception $e) {
@@ -153,6 +162,10 @@ class ArticleManagementController extends Controller
             ]);
 
             DB::commit();
+            Log::create([
+                'type' => 'update',
+                'remark' => 'Update status ' . $article->type . ' to ' . $status . ' ' . strtolower($article->title)
+            ]);
             return response()->json(['status' => '204', 'message' => 'UPDATED.'], 204);
         } catch (\Exception $e) {
             DB::rollBack();
@@ -179,6 +192,10 @@ class ArticleManagementController extends Controller
             ]);
 
             DB::commit();
+            Log::create([
+                'type' => 'update',
+                'remark' => 'Update type ' . $article->type . ' ' . strtolower($article->title)
+            ]);
             return response()->json(['status' => '204', 'message' => 'UPDATED.'], 204);
         } catch (\Exception $e) {
             DB::rollBack();
@@ -198,9 +215,15 @@ class ArticleManagementController extends Controller
                 Storage::delete('public/' . $article->images);
             }
 
+            $type = $article->type;
+            $title = strtolower($article->title);
             $article->delete();
 
             DB::commit();
+            Log::create([
+                'type' => 'delete',
+                'remark' => 'Delete ' . $type . ' ' . strtolower($title)
+            ]);
             return redirect('/admin/articles')->with('session-article-message', 'Article Success Delete.');
         } catch(\Exception $e) {
             DB::rollback();

@@ -5,7 +5,7 @@
     <div class="col-span-3 flex gap-2 items-center">
         <a href="/products" class="text-gray-500 hover:text-gray-900"><i class="fa-solid fa-warehouse"></i> Products</a>
         <i class="fa-solid fa-caret-right"></i>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+        <p class="capitalize line-clamp-1">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
     </div>
     <div class="col-span-1 aspect-square overflow-hidden">
         <img src="{{ asset('storage/' . $datas['product']->images) }}" alt="" class="w-full h-full object-cover">

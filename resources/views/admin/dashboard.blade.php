@@ -61,9 +61,66 @@
                         </div>
                     </div>
                 </div>
+                <div class="my-5 bg-white shadow rounded-lg p-2">
+                    <p class="font-medium mb-5">Recent Action</p>
+                    <table class="w-full border">
+                        <thead>
+                            <tr class="bg-gray-200 rounded-lg ">
+                                <th>Type</th>
+                                <th>Remark</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ($datas['logs'] as $log )
+                                <tr class="p-5 border-b">
+                                    <td class="p-1 text-white text-center"><span class="p-1 rounded-lg capitalize text-sm @if($log->type == 'update')bg-blue-400 @endif @if($log->type == 'create')bg-green-400 @endif @if($log->type == 'delete')bg-red-400 @endif">{{ $log->type }}</span></td>
+                                    <td class="line-clamp-1 p-1">{{ $log->remark }}</td>
+                                    <td class="text-center text-sm w-1/3">{{ $log->created_at->diffForHumans() }}</td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="3" class="text-center text-sm p-2">No Recent Action</td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <div class="col-span-1 px-4 shadow rounded-lg">
+            <div class="col-span-1 px-4 pb-10 shadow rounded-lg">
                 @include('partials.date')
+
+                <div id="popular-article" class="mt-10">
+                    <p class="font-medium text-gray-900 mb-5 border-b">Popular Article</p>
+                    @forelse ($datas['popularArticles'] as $pArt)
+                        <a href="/articles/{{ $pArt->slug }}" class="grid grid-cols-3 mb-2">
+                            <div class="col-span-1 aspect-video">
+                                <img src="{{ asset('storage/' . $pArt->images) }}" alt="Image 1" class="w-full h-full object-cover">
+                            </div>
+                            <div class="col-span-2">
+                                <p class=" line-clamp-2 text-sm capitalize">{{ $pArt->title }}</p>
+                            </div>
+                        </a>
+                    @empty
+                        <p class="w-full text-center text-sm">No Article</p>
+                    @endforelse
+                </div>
+
+                <div id="popular-project" class="mt-10">
+                    <p class="font-medium text-gray-900 mb-5 border-b">Popular project</p>
+                    @forelse ($datas['popularProjects'] as $pProject)
+                        <a href="/projects/{{ $pProject->slug }}" class="grid grid-cols-3 mb-2">
+                            <div class="col-span-1 aspect-video">
+                                <img src="{{ asset('storage/' . $pProject->images) }}" alt="Image 1" class="w-full h-full object-cover">
+                            </div>
+                            <div class="col-span-2">
+                                <p class=" line-clamp-2 text-sm capitalize">{{ $pProject->title }}</p>
+                            </div>
+                        </a>
+                    @empty
+                        <p class="w-full text-center text-sm">No Project</p>
+                    @endforelse
+                </div>
             </div>
         </div>
     </div>
