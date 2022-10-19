@@ -60,6 +60,7 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/admin/articles/store', [ArticleManagementController::class, 'storeArticle'])->name('store-article');
     Route::put('/admin/articles/updateStatusArticle/{slug}/{status}', [ArticleManagementController::class ,'updateStatusArticle'])->name('update-status-article');
     Route::put('/admin/articles/updateTypeArticle/{slug}/{type}', [ArticleManagementController::class ,'updateTypeArticle'])->name('update-type-article');
+    Route::delete('/admin/articles/delete/{slug}', [ArticleManagementController::class, 'deleteArticle'])->name('delete-article');
 
     Route::get('/admin/quotes', [QuoteManagementController::class, 'index'])->name("admin-quotes");
     Route::get('/admin/quotes/getQuotes', [QuoteManagementController::class, 'getQuote'])->name('get-quotes');
@@ -71,6 +72,7 @@ Route::middleware(['auth'])->group(function() {
     Route::get("/admin/gallery/{id}", [GalleryManagementController::class, 'getGallery'])->name('get-gallery');
     Route::post('/admin/gallery/', [GalleryManagementController::class, 'storeGallery'])->name('store-gallery');
     Route::post('/admin/gallery/{id}', [GalleryManagementController::class, 'updateGallery'])->name('update-gallery');
+    Route::delete('/admin/gallery/{id}', [GalleryManagementController::class, 'deleteGallery'])->name('delete-gallery');
 
     Route::get('/admin/products', [ProductManagementController::class, 'index'])->name('admin-products');
     Route::get('/admin/products/get-product/{slug}', [ProductManagementController::class, 'getProduct'])->name('get-product');
@@ -79,6 +81,7 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/admin/product/store-product', [ProductManagementController::class, 'storeProduct'])->name('store-product');
     Route::put('/admin/products/update-image/{slug}', [ProductManagementController::class, 'updateImageProduct'])->name('update-image-product');
     Route::post('/admin/products/update/{slug}', [ProductManagementController::class, 'updateProduct'])->name('update-product');
+    Route::delete('/admin/products/delete/{slug}', [ProductManagementController::class, 'deleteProduct'])->name('delete-product');
 
     Route::get('/setting', [SettingController::class, 'index'])->name('setting');
     Route::post('/setting/update/profile', [SettingController::class, 'updateProfile']);

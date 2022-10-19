@@ -18,6 +18,7 @@ class AdminController extends Controller
         $this->data['quotes'] = Quote::all()->count();
         $this->data['products'] =  Product::all()->count();
         $this->data['gallery'] = Photo::all()->count();
+        $this->data['draft'] = Article::where('status', 'draft')->count();
 
         return view('admin.dashboard', [
             'datas' => $this->data

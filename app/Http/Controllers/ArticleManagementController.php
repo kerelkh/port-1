@@ -185,4 +185,26 @@ class ArticleManagementController extends Controller
             return response()->json(['staus' => '500', 'message' => 'FAILED'], 500);
         }
     }
+
+    public function deleteArticle(Request $request, $slug) {
+        $article = Article::where('slug', $slug)->first();
+        if(!$article) {
+            return back()->with('session-article-error', 'Article Not Found');
+        }
+
+        DB::beginTransaction();
+        try {
+            if($article->images != '' || $article->images != NULL ){
+                Storage::delete('public/' . $article->images);
+            }
+
+            $article->delete();
+
+            DB::commit();
+            return redirect('/admin/articles')->with('session-article-message', 'Article Success Delete.');
+        } catch(\Exception $e) {
+            DB::rollback();
+            return back()->with('session-article-error', 'Failed to delete Article');
+        }
+    }
 }

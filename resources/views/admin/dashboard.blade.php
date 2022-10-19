@@ -42,9 +42,18 @@
                             <p class="text-gray-600 text-sm">Product</p>
                         </div>
                     </div>
-                    <div class="bg-white shadow rounded-lg p-2 px-5 flex gap-2">
+                    <div class="flex-1 bg-white shadow rounded-lg p-2 px-5 flex gap-2">
                         <div class="rounded-xl shadow bg-purple-400 text-white p-1 text-4xl shadow-purple-400">
-                            <i class="fa-solid fa-photo-film"></i>
+                            <i class="fa-solid fa-images"></i>
+                        </div>
+                        <div class="text-lg text-center">
+                            <p class="font-medium">{{ $datas['gallery'] }}</p>
+                            <p class="text-gray-600 text-sm">Gallery</p>
+                        </div>
+                    </div>
+                    <div class="flex-1 bg-white shadow rounded-lg p-2 px-5 flex gap-2">
+                        <div class="rounded-xl shadow bg-blue-400 text-white p-1 text-4xl shadow-blue-400">
+                            <i class="fa-solid fa-images"></i>
                         </div>
                         <div class="text-lg text-center">
                             <p class="font-medium">{{ $datas['gallery'] }}</p>

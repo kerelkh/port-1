@@ -40,6 +40,7 @@
             $('#img-temp').attr('src', window.location.origin + '/storage/' + data.data.images);
             $('#form-update-image-product').attr('action', window.location.origin + '/admin/products/update-image/' + data.data.slug);
             $('#form-update-product').attr('action', window.location.origin + '/admin/products/update/' + data.data.slug);
+            $('#form-delete-product').attr('action', window.location.origin + '/admin/products/delete/' +  data.data.slug);
             $('#name').val(data.data.name);
             $('#price').val(data.data.price);
             $('#unit').val(data.data.unit);

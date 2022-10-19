@@ -15,7 +15,7 @@
         <p class="text-gray-400">{{ now()->subDays(1)->format('D') }}</p>
         <p>{{ now()->subDays(1)->format('d') }}</p>
     </div>
-    <div class="cols-span-1 flex flex-col gap-2 text-center bg-blue-100 rounded-full p-1">
+    <div class="cols-span-1 flex flex-col gap-2 text-center">
         <p class="text-blue-700">{{ now()->format('D') }}</p>
         <p class="text-blue-700">{{ now()->format('d') }}</p>
     </div>

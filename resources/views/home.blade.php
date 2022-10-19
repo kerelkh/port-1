@@ -21,7 +21,7 @@
                 <h2 class="text-3xl font-medium text-gray-800 font-serif">Support Me.</h2>
                 <ul class="mt-5">
                 @foreach($datas['supports'] as $support)
-                    <li class="w-fit text-lg text-gray-700 hover:text-blue-800 hover:text-xl font-medium transition ease-in-out"><i class="fa-solid fa-check"></i> <a href="{{ $support->url }}">{{ $support->name }}</a><br></li>
+                    <li class="w-fit text-lg text-gray-700 hover:text-blue-800 hover:text-xl font-medium transition ease-in-out"><i class="fa-solid fa-check"></i> <a target="__BLANK" href="{{ $support->url }}">{{ $support->name }}</a><br></li>
                 @endforeach
                 </ul>
             </div>
@@ -38,7 +38,7 @@
                 <h2 class="text-3xl font-medium text-gray-800 font-serif">Referral.</h2>
                 <ul class="mt-5">
                 @foreach($datas['referrals'] as $referral)
-                    <li class="w-fit text-lg text-gray-700 hover:text-blue-800 hover:text-xl font-medium transition ease-in-out"><i class="fa-solid fa-sack-dollar"></i> <a href="{{ $referral->url }}">{{ $referral->name }}</a><br></li>
+                    <li class="w-fit text-lg text-gray-700 hover:text-blue-800 hover:text-xl font-medium transition ease-in-out"><i class="fa-solid fa-sack-dollar"></i> <a target="__BLANK" href="{{ $referral->url }}">{{ $referral->name }}</a><br></li>
                 @endforeach
                 </ul>
             </div>

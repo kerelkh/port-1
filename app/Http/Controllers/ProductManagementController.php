@@ -160,4 +160,31 @@ class ProductManagementController extends Controller
             return back()->with('update-image-product-error', 'Failed to update image');
         }
     }
+
+    public function deleteProduct(Request $request, $slug) {
+        $product = Product::where('slug', $slug)->first();
+
+        if(!$product) {
+            return back()->with('session-product-error', 'Product Not Found.');
+        }
+
+        DB::beginTransaction();
+        try{
+            if($product->images) {
+                Storage::delete('public/' . $product->images);
+            }
+
+            $result = $product->delete();
+            if($result) {
+                DB::commit();
+                return redirect('/admin/products')->with('session-product-message', 'Product Deleted.');
+            }
+
+            DB::rollBack();
+            return back()->with('session-product-error', 'Product Failed to delete.');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return back()->with('session-product-error', 'Product Failed to delete.');
+        }
+    }
 }

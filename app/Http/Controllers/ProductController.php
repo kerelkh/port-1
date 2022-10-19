@@ -13,7 +13,7 @@ class ProductController extends Controller
         $this->data['title'] = "Product's";
         $this->data['desc'] = 'See all of my products.';
         if($request->query('search') == '' || $request->query('search') == NULL){
-            $this->data['products'] = Product::all();
+            $this->data['products'] = Product::orderBy('created_at', 'desc')->get();
         }else{
             $this->data['products'] = Product::where('name', 'LIKE', '%' . $request->query('search') . '%')->orderBy('created_at', 'desc')->get();
         }

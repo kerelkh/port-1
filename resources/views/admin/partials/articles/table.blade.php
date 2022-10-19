@@ -35,6 +35,7 @@
             url: url,
             processing: true,
         }).done(function(data) {
+            $('#form-delete-article').attr('action' , window.location.origin + '/admin/articles/delete/' + data.data.slug);
             $('#article-detail').fadeIn(100);
             $('#img-temp').attr('src', window.location.origin + '/storage/' + data.data.images);
             $('#title').val(data.data.title);

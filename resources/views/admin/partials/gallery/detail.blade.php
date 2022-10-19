@@ -41,7 +41,14 @@
         </div>
     </div>
     <div class="flex-1">
-        <p class="text-lg font-serif">Detail Photo</p>
+        <div class="flex justify-between items-center">
+            <p class="text-lg font-serif">Detail Photo</p>
+            <form action="" method="POST" id="form-delete-gallery" style="display: none;">
+                @csrf
+                @method("DELETE")
+                <button type="submit" class="py-2 px-4 bg-red-500 hover:bg-red-600 text-white shadow rounded-lg">DELETE</button>
+            </form>
+        </div>
         @if(session('update-photo-message'))
         <x-message-notice type="message" value="{{ session('update-photo-message') }}"></x-message-notice>
         @endif
@@ -110,6 +117,23 @@
             title: 'Are you sure?',
             showCancelButton: true,
             confirmButtonText: 'Save',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                e.target.submit();
+            }
+        })
+    })
+
+    $(document).on('submit', '#form-delete-gallery', function(e) {
+        e.preventDefault();
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
                 e.target.submit();

@@ -106,4 +106,20 @@ class GalleryManagementController extends Controller
             return back()->with('update-photo-error', 'Update photo failed.');
         }
     }
+
+    public function deleteGallery(Request $request, $id) {
+        $photo = Photo::whereId($id)->first();
+
+        DB::beginTransaction();
+        try{
+            Storage::delete('public/' . $photo->images);
+            $photo->delete();
+
+            DB::commit();
+            return redirect('/admin/gallery')->with('session-gallery-message', 'Success Delete Photo');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return back()->with('session-gallery-error', 'Failed delete photo');
+        }
+    }
 }

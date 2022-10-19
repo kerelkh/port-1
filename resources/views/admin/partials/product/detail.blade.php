@@ -1,5 +1,12 @@
 <div id="product-detail" class="my-5" style="display: none;">
-    <h2 class="text-lg text-gray-800 font-medium"><i class='fa-solid fa-circle-info mb-5'></i> Detail</h2>
+    <div class="flex justify-between items-center">
+        <h2 class="text-lg text-gray-800 font-medium"><i class='fa-solid fa-circle-info mb-5'></i> Detail</h2>
+        <form action="" method="POST" id="form-delete-product">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="py-2 px-4 bg-red-500 hover:bg-red-600 text-white shadow rounded-lg">DELETE</button>
+        </form>
+    </div>
     <div class="flex my-5 gap-5">
         <div class="flex-1">
             <form action="" method="POST" enctype="multipart/form-data" id="form-update-image-product">
@@ -72,6 +79,23 @@
             title: 'Do you want to save?',
             showCancelButton: true,
             confirmButtonText: 'Save',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                e.target.submit();
+            }
+        })
+    })
+
+    $(document).on('submit', '#form-delete-product', function(e) {
+        e.preventDefault();
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
                 e.target.submit();

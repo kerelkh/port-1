@@ -1,6 +1,13 @@
 <div id="article-detail" class="my-10 py-5" style="display:none">
     <div class="flex justify-between items-center mb-10">
-        <h2 class="text-lg text-gray-800 font-medium"><i class='fa-solid fa-circle-info mb-5'></i> Detail</h2>
+        <div class="flex justify-center  items-center gap-10">
+            <h2 class="text-lg text-gray-800 font-medium"><i class='fa-solid fa-circle-info'></i> Detail</h2>
+            <form action="" method="POST" id="form-delete-article">
+                @csrf
+                @method("DELETE")
+                <button type="submit" class="py-2 px-4 bg-red-500 hover:bg-red-600 text-white shadow rounded-lg">DELETE</button>
+            </form>
+        </div>
         <div class="w-1/2 flex justify-center items-center gap-5">
             <div class="w-1/2">
                 <label for="status" class="sr-only">Status</label>
@@ -216,6 +223,23 @@
                 });
             }});
     });
+
+    $(document).on('submit', '#form-delete-article', function(e) {
+        e.preventDefault();
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                e.target.submit();
+            }
+        })
+    })
 
     function textAreaAdjust(element) {
         element.style.height = "1px";

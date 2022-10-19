@@ -30,7 +30,7 @@
             </div>
             <div class="my-2 flex flex-col gap-2">
                 <p class="line-clamp-2 font-serif text-sm capitalize">{{ $product->name }}</p>
-                <p class="text-xs {{ ($product->stock != 0) ? 'text-blue-600' : 'text-red-600' }} font-medium"><i class="fa-solid fa-box"></i> {{ $product->stock }}</p>
+                <p class="text-xs {{ ($product->stock != 0) ? 'text-blue-600' : 'text-red-600' }} font-medium"><i class="fa-solid fa-box"></i> {{ $product->stock }} {{ $product->unit }}</p>
                 <p class="text-xs text-green-600 font-medium"><i class="fa-solid fa-rupiah-sign"></i> {{ number_format($product->price,2,',','.') }}</p>
             </div>
         </a>

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('title')->unique();
             $table->text('description');
             $table->string('images')->nullable();
-            $table->text('body');
+            $table->longText('body');
             $table->bigInteger('view')->default(0);
             $table->enum('status', ['draft', 'publish'])->default('draft');
             $table->enum('type', ['article', 'project'])->default('article');

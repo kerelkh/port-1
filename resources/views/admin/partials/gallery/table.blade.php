@@ -34,6 +34,8 @@
         }).done(function(data) {
             $('#message-notice').hide();
             $('#form-photo-update').fadeIn(100);
+            $('#form-delete-gallery').fadeIn(100);
+            $('#form-delete-gallery').attr('action', window.location.origin + '/admin/gallery/' + data.data.id);
             $('#update-photo_name').val(data.data.name);
             $('#img-temp-update').attr('src', window.location.origin + '/storage/' + data.data.images);
             $('#form-photo-update').attr('action', window.location.origin + '/admin/gallery/' + data.data.id);
