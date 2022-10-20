@@ -1772,9 +1772,9 @@ input:checked + .toggle-bg {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 .font-medium {
   font-weight: 500;
@@ -1794,14 +1794,14 @@ input:checked + .toggle-bg {
 .leading-8 {
   line-height: 2rem;
 }
+.leading-6 {
+  line-height: 1.5rem;
+}
 .leading-7 {
   line-height: 1.75rem;
 }
 .leading-5 {
   line-height: 1.25rem;
-}
-.leading-6 {
-  line-height: 1.5rem;
 }
 .leading-9 {
   line-height: 2.25rem;
@@ -2022,6 +2022,16 @@ input:checked + .toggle-bg {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+}
+.first-letter\:float-left::first-letter {
+  float: left;
+}
+.first-letter\:text-5xl::first-letter {
+  font-size: 3rem;
+  line-height: 1;
+}
+.first-letter\:uppercase::first-letter {
+  text-transform: uppercase;
 }
 .file\:mr-4::-webkit-file-upload-button {
   margin-right: 1rem;
@@ -2452,16 +2462,16 @@ input:checked + .toggle-bg {
     width: fit-content;
   }
 
+  .sm\:w-5\/6 {
+    width: 83.333333%;
+  }
+
   .sm\:w-4\/6 {
     width: 66.666667%;
   }
 
   .sm\:w-3\/4 {
     width: 75%;
-  }
-
-  .sm\:w-5\/6 {
-    width: 83.333333%;
   }
 
   .sm\:flex-1 {
@@ -2523,6 +2533,10 @@ input:checked + .toggle-bg {
     padding-right: 2rem;
   }
 
+  .sm\:pr-0 {
+    padding-right: 0px;
+  }
+
   .sm\:pt-0 {
     padding-top: 0px;
   }
@@ -2563,6 +2577,11 @@ input:checked + .toggle-bg {
   .sm\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+
+  .sm\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .sm\:leading-8 {
@@ -2606,9 +2625,18 @@ input:checked + .toggle-bg {
     border-left-width: 1px;
   }
 
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .md\:leading-8 {
+    line-height: 2rem;
   }
 }
 @media (min-width: 1024px) {
@@ -2616,6 +2644,11 @@ input:checked + .toggle-bg {
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .lg\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
   .lg\:text-xl {

@@ -1,20 +1,20 @@
 @extends('layout.index')
 
 @section('content')
-<div class="w-5/6 mx-auto mt-5 grid grid-cols-6 gap-5 mb-20">
-    <div class="col-span-4">
-        <div class="flex justify-start items-center gap-2 mb-10">
+<div class="w-full sm:w-5/6 px-2 sm:px-0 mx-auto mt-5 grid grid-cols-1 sm:grid-cols-6 gap-5 mb-20">
+    <div class="col-span-1 sm:col-span-4">
+        <div class="flex justify-start items-center gap-2 mb-10 text-sm sm:text-base">
             <a href="/{{ $datas['article']->type }}s" class="capitalize flex justify-center items-center gap-2"><i class="fa-regular fa-newspaper"></i> {{ $datas['article']->type }}</a>
             <i class="fa-solid fa-caret-right"></i>
             <p class="capitalize line-clamp-1">{{ $datas['article']->title }}</p>
         </div>
-        <h1 class="font-serif text-5xl pr-10 mb-5 capitalize">{{ $datas['article']->title }}</h1>
-        <div class="flex items-center space-x-2 text-gray-500 mb-5">
+        <h1 class="font-serif text-lg sm:text-xl md:text-2xl lg:text-4xl pr-10 sm:pr-0 mb-5 capitalize">{{ $datas['article']->title }}</h1>
+        <div class="flex items-center space-x-2 text-gray-500 mb-5 text-sm sm:text-base">
             <p class="flex gap-2 items-center"><i class="fa-solid fa-clock-rotate-left"></i> <span>{{ $datas['article']->created_at->format('M d, Y') }}</span></p>
             <p class="flex gap-2 items-center"><i class="fa-solid fa-eye"></i> <span>{{ $datas['article']->view }}</span></p>
         </div>
 
-        <div id="description" class="text-lg leading-8 mb-5">
+        <div id="description" class="text-sm sm:text-base md:text-lg leading-8 mb-5">
             <p>{{ $datas['article']->description }}</p>
         </div>
 
@@ -28,7 +28,7 @@
             @endif
         </div>
 
-        <div id="body" class="text-lg leading-8 space-y-10 mb-5">
+        <div id="body" class="text-base md:text-lg leading-6 md:leading-8 space-y-10 mb-5 first-letter:float-left first-letter:uppercase first-letter:text-5xl">
             {!! $datas['article']->body !!}
         </div>
     </div>
