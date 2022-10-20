@@ -1,6 +1,6 @@
 <div class="flex justify-between items-center">
     <p class="text text-gray-700">{{ now()->format('F') . '/' . now()->format('Y') }}</p>
-    <p class="text-xl font-medium tracking-wider" id="live-clock">00 : 00 : 00</p>
+    <p class="md:text-lg lg:text-xl font-medium tracking-wider" id="live-clock">00 : 00 : 00</p>
 </div>
 <div class="grid grid-cols-7 gap-2 mt-5">
     <div class="cols-span-1 flex flex-col gap-2 text-center">

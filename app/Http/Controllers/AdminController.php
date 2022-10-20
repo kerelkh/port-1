@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Log;
+use App\Models\Message;
 use App\Models\Photo;
 use App\Models\Product;
 use App\Models\Quote;
@@ -23,6 +24,7 @@ class AdminController extends Controller
         $this->data['logs'] = Log::orderBy('created_at', 'desc')->limit(10)->get();
         $this->data['popularArticles'] = Article::where('type', 'article')->where('status', 'publish')->orderBy('view', 'desc')->limit(3)->get();
         $this->data['popularProjects'] = Article::where('type', 'project')->where('status', 'publish')->orderBy('view', 'desc')->limit(3)->get();
+        $this->data['messages'] = Message::orderBy('created_at', 'desc')->limit(5)->get();
 
         return view('admin.dashboard', [
             'datas' => $this->data

@@ -33,9 +33,13 @@ class HomeController extends Controller
     }
 
     public function sendMessage(Request $request) {
+        $validator = $request->validate([
+            'email' => ['required','email'],
+            'message' => ['required', 'min:3', 'max:255']
+        ]);
         $result = Message::create([
-            'email' => $request->email,
-            'message' => $request->message,
+            'email' => strtolower($validator['email']),
+            'message' => ucwords($validator['message'])
         ]);
 
         return redirect('/')->with('send-message', 'Send Message Success.');

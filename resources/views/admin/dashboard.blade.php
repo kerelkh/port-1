@@ -85,6 +85,32 @@
                             @endforelse
                         </tbody>
                     </table>
+
+                    <div class="mt-5">
+                        <p class="font-medium mb-5">Recent Message</p>
+                        <table class="w-full border">
+                            <thead>
+                                <tr class="bg-gray-200 rounded-lg ">
+                                    <th>Email</th>
+                                    <th>Message</th>
+                                    <th>Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse ($datas['messages'] as $message )
+                                    <tr class="p-5 border-b">
+                                        <td class="p-1 text-center"><span class="p-1 rounded-lg capitalize text-sm">{{ $message->email }}</span></td>
+                                        <td class="p-1 text-sm">{{ $message->message }}</td>
+                                        <td class="text-center text-sm w-1/3">{{ $message->created_at->diffForHumans() }}</td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="3" class="text-center text-sm p-2">No Recent Message</td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="col-span-1 px-4 pb-10 shadow rounded-lg">
