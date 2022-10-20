@@ -1,6 +1,6 @@
 <div class="w-full sticky top-0 bg-white z-50">
     <nav class="w-5/6 mx-auto flex justify-between items-center py-2">
-        <div class="h-10 overflow-hidden">
+        <div class="h-6 md:h-10 overflow-hidden">
             <a href="/">
                 {{-- <img src="https://cdn.cdnlogo.com/logos/g/68/guess.svg" alt="Logo" class="h-full"> --}}
                 <img src="{{ asset('images/logo3.png') }}" alt="Logo" class="h-full">
@@ -25,7 +25,7 @@
         </div>
     </nav>
     <div class="bg-gray-800 text-white font-serif">
-        <div class="w-5/6 mx-auto flex justify-between items-stretch py-2">
+        <div class="w-5/6 mx-auto flex flex-wrap justify-between items-center py-2">
             <a href="/" class="hover:text-blue-400 py-1 px-2 {{ (Request::is('/')) ? 'text-blue-400' : ''}}">Home</a>
             <a href="/articles" class="hover:text-blue-400 py-1 px-2 {{ (Request::is('articles')) ? 'text-blue-400' : ''}}">Article's</a>
             <a href="/projects" class="hover:text-blue-400 py-1 px-2 {{ (Request::is('projects')) ? 'text-blue-400' : ''}}">Project's</a>

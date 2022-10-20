@@ -25,7 +25,7 @@ class HomeController extends Controller
         $data['galleries'] = Photo::limit(6)->get();
         $data['portraitBanners'] = PortraitBanner::all();
         $data['squareBanners'] = SquareBanner::all();
-        $data['articles'] = Article::limit(3)->orderBy('created_at', 'desc')->get();
+        $data['articles'] = Article::where('type', 'article')->where('status', 'publish')->limit(3)->orderBy('created_at', 'desc')->get();
 
         return view('home', [
             'datas' => $data,
