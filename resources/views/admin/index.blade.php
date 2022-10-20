@@ -7,7 +7,7 @@
 
 @section('content')
     <div class="w-full md:w-5/6 px-5 md:px-0 mx-auto grid grid-cols-4 mt-10">
-        <div class="col-span-4 md:col-span-1 overflow-hidden">
+        <div class="col-span-4 lg:col-span-1 overflow-hidden">
             <div class="border border-gray-200 rounded-lg flex flex-col items-stretch p-2 space-y-2">
                 <a
                     href="/dashboard"
@@ -39,7 +39,7 @@
                 >Setting</a>
             </div>
         </div>
-        <div class="col-span-4 md:col-span-3 md:px-4 overflow-hidden mt-10 md:mt-0">
+        <div class="col-span-4 lg:col-span-3 md:px-4 overflow-hidden mt-10 lg:mt-0">
             @yield('admin-content')
         </div>
     </div>
