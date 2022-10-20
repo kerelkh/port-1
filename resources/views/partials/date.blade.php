@@ -1,9 +1,9 @@
-<div class="flex justify-between items-center">
+<div class="flex flex-wrap justify-between items-center">
     <p class="text text-gray-700">{{ now()->format('F') . '/' . now()->format('Y') }}</p>
-    <p class="md:text-lg lg:text-xl font-medium tracking-wider" id="live-clock">00 : 00 : 00</p>
+    <p class="text-sm md:text-base lg:text-lg font-medium tracking-wider" id="live-clock">00 : 00 : 00</p>
 </div>
-<div class="grid grid-cols-7 gap-2 mt-5">
-    <div class="cols-span-1 flex flex-col gap-2 text-center">
+<div class="grid grid-cols-5 md:grid-cols-7 gap-2 mt-5">
+    <div class="hidden cols-span-1 flex-col gap-2 text-center md:flex">
         <p class="text-gray-400">{{ now()->subDays(3)->format('D') }}</p>
         <p class="text-gray-600">{{ now()->subDays(3)->format('d') }}</p>
     </div>
@@ -27,7 +27,7 @@
         <p class="text-gray-400">{{ now()->addDays(2)->format('D') }}</p>
         <p class="text-gray-700">{{ now()->addDays(2)->format('d') }}</p>
     </div>
-    <div class="cols-span-1 flex flex-col gap-2 text-center">
+    <div class="hidden cols-span-1 flex-col gap-2 text-center md:flex">
         <p class="text-gray-400">{{ now()->addDays(3)->format('D') }}</p>
         <p class="text-gray-600">{{ now()->addDays(3)->format('d') }}</p>
     </div>
