@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -30,6 +31,11 @@ class ProductController extends Controller
         }
         $this->data['title'] = ucwords($this->data['product']->name);
         $this->data['products'] = Product::whereNot('slug', $slug)->inRandomOrder()->limit(5)->get();
+        if(!Auth::check()){
+            $this->data['product']->view += 1;
+            $this->data['product']->timestamps = false;
+            $this->data['product']->save();
+        }
         return view('show-product', [
             'datas' => $this->data
         ]);

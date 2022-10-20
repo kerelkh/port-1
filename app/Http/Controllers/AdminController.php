@@ -23,7 +23,7 @@ class AdminController extends Controller
         $this->data['draft'] = Article::where('status', 'draft')->count();
         $this->data['logs'] = Log::orderBy('created_at', 'desc')->limit(10)->get();
         $this->data['popularArticles'] = Article::where('type', 'article')->where('status', 'publish')->orderBy('view', 'desc')->limit(3)->get();
-        $this->data['popularProjects'] = Article::where('type', 'project')->where('status', 'publish')->orderBy('view', 'desc')->limit(3)->get();
+        $this->data['popularProducts'] = Product::orderBy('view', 'desc')->limit(4)->get();
         $this->data['messages'] = Message::orderBy('created_at', 'desc')->limit(5)->get();
 
         return view('admin.dashboard', [

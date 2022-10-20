@@ -124,7 +124,7 @@
                                 <img src="{{ asset('storage/' . $pArt->images) }}" alt="Image 1" class="w-full h-full object-cover">
                             </div>
                             <div class="col-span-2">
-                                <p class=" line-clamp-2 text-sm capitalize">{{ $pArt->title }}</p>
+                                <p class=" line-clamp-2 text-sm capitalize px-2 text-gray-900 font-medium">{{ $pArt->title }}</p>
                             </div>
                         </a>
                     @empty
@@ -133,14 +133,14 @@
                 </div>
 
                 <div id="popular-project" class="mt-10">
-                    <p class="font-medium text-gray-900 mb-5 border-b">Popular project</p>
-                    @forelse ($datas['popularProjects'] as $pProject)
-                        <a href="/projects/{{ $pProject->slug }}" class="grid grid-cols-3 mb-2">
+                    <p class="font-medium text-gray-900 mb-5 border-b">Popular Product</p>
+                    @forelse ($datas['popularProducts'] as $pProduct)
+                        <a href="/product/{{ $pProduct->slug }}" class="grid grid-cols-3 mb-2">
                             <div class="col-span-1 aspect-video">
-                                <img src="{{ asset('storage/' . $pProject->images) }}" alt="Image 1" class="w-full h-full object-cover">
+                                <img src="{{ asset('storage/' . $pProduct->images) }}" alt="Image 1" class="w-full h-full object-cover">
                             </div>
-                            <div class="col-span-2">
-                                <p class=" line-clamp-2 text-sm capitalize">{{ $pProject->title }}</p>
+                            <div class="col-span-2 px-2 text-gray-900 font-medium">
+                                <p class=" line-clamp-2 text-sm capitalize">{{ $pProduct->name }}</p>
                             </div>
                         </a>
                     @empty
