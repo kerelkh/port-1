@@ -7,7 +7,7 @@
             <div class="col-span-2">
                 <div class="flex justify-start items-stretch flex-wrap gap-2">
                     <div class="flex-1 bg-white shadow rounded-lg p-2 px-5 flex gap-2">
-                        <div class="rounded-xl shadow bg-blue-400 text-white p-1 text-4xl shadow-blue-400">
+                        <div class="rounded-xl aspect-square text-center shadow bg-blue-400 text-white p-1 text-4xl shadow-blue-400">
                             <i class="fa-solid fa-newspaper"></i>
                         </div>
                         <div class="text-lg text-center">
@@ -16,7 +16,7 @@
                         </div>
                     </div>
                     <div class="flex-1 bg-white shadow rounded-lg p-2 px-5 flex gap-2">
-                        <div class="rounded-xl shadow bg-green-400 text-white p-1 text-4xl shadow-green-400">
+                        <div class="rounded-xl aspect-square text-center shadow bg-green-400 text-white p-1 text-4xl shadow-green-400">
                             <i class="fa-solid fa-diagram-project"></i>
                         </div>
                         <div class="text-lg text-center">
@@ -25,7 +25,7 @@
                         </div>
                     </div>
                     <div class="flex-1 bg-white shadow rounded-lg p-2 px-5 flex gap-2">
-                        <div class="rounded-xl shadow bg-red-400 text-white p-1 text-4xl shadow-red-400">
+                        <div class="rounded-xl aspect-square text-center shadow bg-red-400 text-white p-1 text-4xl shadow-red-400">
                             <i class="fa-solid fa-quote-left"></i>
                         </div>
                         <div class="text-lg text-center">
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="flex-1 bg-white shadow rounded-lg p-2 px-5 flex gap-2">
-                        <div class="rounded-xl shadow bg-yellow-400 text-white p-1 text-4xl shadow-yellow-400">
+                        <div class="rounded-xl aspect-square text-center shadow bg-yellow-400 text-white p-1 text-4xl shadow-yellow-400">
                             <i class="fa-solid fa-database"></i>
                         </div>
                         <div class="text-lg text-center">
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="flex-1 bg-white shadow rounded-lg p-2 px-5 flex gap-2">
-                        <div class="rounded-xl shadow bg-purple-400 text-white p-1 text-4xl shadow-purple-400">
+                        <div class="rounded-xl aspect-square text-center shadow bg-purple-400 text-white p-1 text-4xl shadow-purple-400">
                             <i class="fa-solid fa-images"></i>
                         </div>
                         <div class="text-lg text-center">
@@ -52,12 +52,12 @@
                         </div>
                     </div>
                     <div class="flex-1 bg-white shadow rounded-lg p-2 px-5 flex gap-2">
-                        <div class="rounded-xl shadow bg-blue-400 text-white p-1 text-4xl shadow-blue-400">
-                            <i class="fa-solid fa-images"></i>
+                        <div class="rounded-xl aspect-square text-center shadow bg-blue-400 text-white p-1 text-4xl shadow-blue-400">
+                            <i class="fa-brands fa-firstdraft"></i>
                         </div>
                         <div class="text-lg text-center">
-                            <p class="font-medium">{{ $datas['gallery'] }}</p>
-                            <p class="text-gray-600 text-sm">Gallery</p>
+                            <p class="font-medium">{{ $datas['draft'] }}</p>
+                            <p class="text-gray-600 text-sm">Draft</p>
                         </div>
                     </div>
                 </div>
