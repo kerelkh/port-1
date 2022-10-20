@@ -1,7 +1,7 @@
 @extends('layout.index')
 
 @section('content')
-<div class="w-5/6 mx-auto my-5">
+<div class="w-full sm:w-5/6 px-2 sm:px-0 mx-auto my-5">
     <h1 class="text-xl text-gray-800">{{ $datas['title'] }}</h1>
     <p class=" text-gray-500 italic break-words">{{ $datas['desc'] }}</p>
     <form class="flex items-center mt-5">
@@ -18,9 +18,9 @@
         </button>
     </form>
 
-    <div class="my-2 flex justify-start items-stretch">
+    <div class="my-5 sm:my-2 flex flex-wrap justify-start items-stretch gap-5">
         @forelse($datas['products'] as $product)
-        <a href="/products/{{ $product->slug }}" class="w-[200px] p-2 transition rounded-lg">
+        <a href="/products/{{ $product->slug }}" class="w-full sm:w-[250px] p-2 transition rounded-lg">
             <div class="w-full aspect-square overflow-hidden">
                 @if($product->images != '' || $product->images != NULL)
                 <img src="{{ asset('storage/' . $product->images) }}" alt="" class="w-full object-cover">
@@ -29,7 +29,7 @@
                 @endif
             </div>
             <div class="my-2 flex flex-col gap-2">
-                <p class="line-clamp-2 font-serif text-sm capitalize">{{ $product->name }}</p>
+                <p class="line-clamp-2 text-lg capitalize">{{ $product->name }}</p>
                 <p class="text-xs {{ ($product->stock != 0) ? 'text-blue-600' : 'text-red-600' }} font-medium"><i class="fa-solid fa-box"></i> {{ $product->stock }} {{ $product->unit }}</p>
                 <p class="text-xs text-green-600 font-medium"><i class="fa-solid fa-rupiah-sign"></i> {{ number_format($product->price,2,',','.') }}</p>
             </div>
