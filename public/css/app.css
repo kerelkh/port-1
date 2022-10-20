@@ -1189,9 +1189,6 @@ input:checked + .toggle-bg {
 .w-2\/4 {
   width: 50%;
 }
-.w-\[230px\] {
-  width: 230px;
-}
 .w-fit {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -2456,6 +2453,10 @@ input:checked + .toggle-bg {
     width: fit-content;
   }
 
+  .sm\:w-\[230px\] {
+    width: 230px;
+  }
+
   .sm\:w-5\/6 {
     width: 83.333333%;
   }
@@ -2466,6 +2467,18 @@ input:checked + .toggle-bg {
 
   .sm\:w-3\/4 {
     width: 75%;
+  }
+
+  .sm\:w-\[250px\] {
+    width: 250px;
+  }
+
+  .sm\:max-w-\[250px\] {
+    max-width: 250px;
+  }
+
+  .sm\:max-w-\[230px\] {
+    max-width: 230px;
   }
 
   .sm\:flex-1 {

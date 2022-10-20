@@ -9,8 +9,8 @@
         @forelse($datas['galleries'] as $gly)
         <a href="{{ asset('storage/' . $gly->images) }}" data-pswp-width="5000"
         data-pswp-height="2500"
-        target="_blank" class="max-w-[250px] relative group shadow-lg">
-            <div class="w-[230px] aspect-video">
+        target="_blank" class="w-full sm:max-w-[250px] relative group shadow-lg">
+            <div class="w-full sm:w-[250px] aspect-video">
                 <img src="{{ asset('storage/' . $gly->images) }}" alt="" class="w-full h-full object-cover" loading="lazy">
             </div>
             <p class="absolute bottom-0 left-0 right-0 line-clamp-1 px-1 text-sm flex justify-center items-center bg-gradient-to-r from-black via-black/50 to-transparent text-white">{{ $gly->name }}</p>
