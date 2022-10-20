@@ -1,13 +1,13 @@
 @extends('layout.index')
 
 @section('content')
-<div class="w-5/6 mx-auto mt-5 grid grid-cols-6 gap-5">
-    <div class="col-span-4">
-        <h1 class="text-xl text-gray-800">{{ $datas['title'] }}</h1>
-        <p class=" text-gray-500 italic break-words">{{ $datas['desc'] }}</p>
+<div class="w-full sm:w-5/6 mx-auto mt-5 grid grid-cols-1 sm:grid-cols-6 gap-5 px-2 sm:px-0">
+    <div class="col-span-1 sm:col-span-4">
+        <h1 class="text-lg sm:text-xl text-gray-800">{{ $datas['title'] }}</h1>
+        <p class="text-xs sm:text-base text-gray-500 italic break-words">{{ $datas['desc'] }}</p>
         <form class="flex items-center mt-5">
             <label for="simple-search" class="sr-only">Search</label>
-            <div class="relative w-fit">
+            <div class="relative w-full sm:w-fit">
                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                     <svg aria-hidden="true" class="w-5 h-5 text-gray-500 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
                 </div>
@@ -22,20 +22,20 @@
         <div class="my-10">
             @forelse($datas['articles'] as $article)
             <a href="/{{ $article->type }}s/{{ $article->slug }}">
-                <div class="flex gap-5 mb-5">
-                    <div class="flex-1">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                    <div class="cols-span-1">
                         <div class="aspect-video">
                             @if($article->images != NULL)
-                            <img src="{{ asset('storage/' . $article->images) }}" alt="img" class="w-full object-cover">
+                            <img src="{{ asset('storage/' . $article->images) }}" alt="img" class="w-full h-full object-cover">
                             @else
                             <img src="{{ asset('images/image-placeholder.png') }}" alt="img" class="w-full object-cover">
                             @endif
                         </div>
                     </div>
-                    <div class="flex-1">
-                        <h2 class="text-2xl text-gray-900 hover:text-blue-800 font-serif capitalize">{{ $article->title }}</h2>
-                        <span class="text-gray-600 text-sm"><i class="fa-regular fa-clock"></i> {{ $article->created_at->diffForHumans() }}</span>
-                        <p class="mt-2 text-gray-800">{{ $article->description }}</p>
+                    <div class="cols-span-1">
+                        <h2 class="text-lg sm:text-2xl text-gray-900 hover:text-blue-800 font-serif capitalize">{{ $article->title }}</h2>
+                        <span class="text-gray-600 text-xs sm:text-sm"><i class="fa-regular fa-clock"></i> {{ $article->created_at->diffForHumans() }}</span>
+                        <p class="mt-2 text-gray-800 text-sm sm:text-base">{{ $article->description }}</p>
                     </div>
                 </div>
             </a>
