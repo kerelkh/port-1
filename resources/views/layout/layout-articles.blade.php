@@ -50,7 +50,7 @@
             {{-- @endif --}}
         </div>
     </div>
-    <div class="col-span-2 py-10">
+    <div class="col-span-1 sm:col-span-2 py-10">
         <p class="text-gray-800 text-xl font-serif mb-2">Quotes.</p>
         <div class="mb-5">
             @foreach($datas['quotes'] as $quote)
