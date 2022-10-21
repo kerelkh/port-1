@@ -5,7 +5,7 @@
     @if(session('update-banner-square-error'))
     <x-message-notice type="error" value="{{ session('update-banner-square-error') }}"></x-message-notice>
     @endif
-    <div class="flex items-start my-5 gap-5">
+    <div class="flex flex-col sm:flex-row items-start my-5 gap-5">
         <div class="flex-1">
             <p class="mt-2">Banner Square 1</p>
             <form action="/content/square/1" method="POST" enctype="multipart/form-data" class="form-square gap-3">
@@ -85,7 +85,7 @@
             </form>
         </div>
     </div>
-    <div class="flex items-start my-5 gap-5">
+    <div class="flex flex-col sm:flex-row items-start my-5 gap-5">
         <div class="flex-1">
             <p class="mt-2">Banner Square 4</p>
             <form action="/content/square/4" method="POST" enctype="multipart/form-data" class="form-square gap-3">

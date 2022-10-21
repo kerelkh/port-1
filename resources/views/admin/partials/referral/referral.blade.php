@@ -1,5 +1,5 @@
-<div id="referral-detail" class="detail mt-5" style="display:none">
-    <table id="table-referral" class="text-sm display" data-url="{{ route('get-referrals') }}" style="width:100%">
+<div id="referral-detail" class="text-xs sm:text-sm md:text-base detail mt-5" style="display:none">
+    <table id="table-referral" class="text-sm display w-full" data-url="{{ route('get-referrals') }}" style="width:100%">
         <thead>
             <tr>
                 <th>Name</th>
