@@ -1,4 +1,4 @@
-<div id="product-detail" class="my-5" style="display: none;">
+<div id="product-detail" class="my-10 sm:my-5" style="display: none;">
     <div class="flex justify-between items-center">
         <h2 class="text-lg text-gray-800 font-medium"><i class='fa-solid fa-circle-info mb-5'></i> Detail</h2>
         <form action="" method="POST" id="form-delete-product">
@@ -7,13 +7,13 @@
             <button type="submit" class="py-2 px-4 bg-red-500 hover:bg-red-600 text-white shadow rounded-lg">DELETE</button>
         </form>
     </div>
-    <div class="flex my-5 gap-5">
+    <div class="flex flex-col sm:flex-row my-5 gap-5">
         <div class="flex-1">
             <form action="" method="POST" enctype="multipart/form-data" id="form-update-image-product">
                 @csrf
                 @method('PUT')
                 <div>
-                    <div class="flex gap-5">
+                    <div class="flex flex-col sm:flex-row gap-5">
                         <div class="w-1/2 aspect-video">
                             <img src="{{ asset('images/image-placeholder.png')}}" alt="Banner temporary" id="img-temp" class="w-full object-cover">
                         </div>

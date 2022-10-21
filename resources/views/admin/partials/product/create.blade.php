@@ -12,7 +12,7 @@
     <form action="{{ route('store-product') }}" method="POST" enctype="multipart/form-data" id="form-create-product">
         @csrf
         <div class="mb-10">
-            <div class="flex gap-5">
+            <div class="flex flex-col sm:flex-row gap-5">
                 <div class="w-1/2 aspect-video">
                     <img src="{{ asset('images/image-placeholder.png')}}" alt="Banner temporary" id="img-temp" class="w-full object-cover">
                 </div>

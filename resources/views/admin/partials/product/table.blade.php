@@ -1,5 +1,5 @@
 <div id="products-detail" class="detail mt-5">
-    <table id="table-products" class="text-sm display" data-url="{{ route('get-products') }}" style="width:100%">
+    <table id="table-products" class="text-xs sm:text-sm display" data-url="{{ route('get-products') }}" style="width:100%">
         <thead class="bg-gray-800 text-white">
             <tr>
                 <th>Name</th>

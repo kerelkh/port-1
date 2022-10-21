@@ -15,7 +15,7 @@
     @if(session('session-product-error'))
     <x-message-notice type="error" value="{{ session('session-product-error') }}"></x-message-notice>
     @endif
-    <a href="{{ route('create-product') }}" class="block p-2 px-4 rounded text-white bg-gray-600 hover:bg-gray-800 w-fit mb-5"><i class="fa-solid fa-plus"></i> Add New Product</a>
+    <a href="{{ route('create-product') }}" class="block p-2 px-4 rounded text-white bg-gray-600 hover:bg-gray-800 w-fit mb-5 text-sm sm:text-base"><i class="fa-solid fa-plus"></i> Add New Product</a>
     @include('admin.partials.product.table')
 </div>
 
