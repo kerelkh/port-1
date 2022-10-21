@@ -9,7 +9,7 @@
     @if(session('session-article-error'))
     <x-message-notice type="error" value="{{ session('session-article-error') }}"></x-message-notice>
     @endif
-    <a href="{{ route('create-article') }}" class="block p-2 px-4 rounded text-white bg-gray-600 hover:bg-gray-800 w-fit mb-5"><i class="fa-solid fa-plus"></i> Add New Article</a>
+    <a href="{{ route('create-article') }}" class="block p-2 px-4 rounded text-white bg-gray-600 hover:bg-gray-800 w-fit mb-5 text-sm md:text-base"><i class="fa-solid fa-plus"></i> Add New Article</a>
     @include('admin.partials.articles.table')
 </div>
 

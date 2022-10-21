@@ -1,5 +1,5 @@
-<div id="articles-detail" class="detail mt-5">
-    <table id="table-articles" class="text-sm display" data-url="{{ route('get-articles') }}" style="width:100%">
+<div id="articles-detail" class="detail mt-5 overflow-scroll">
+    <table id="table-articles" class="min-w-[700px] md:w-full text-xs sm:text-sm display" data-url="{{ route('get-articles') }}">
         <thead>
             <tr>
                 <th>Title</th>

@@ -1,6 +1,6 @@
-<div id="article-detail" class="my-10 py-5" style="display:none">
-    <div class="flex justify-between items-center mb-10">
-        <div class="flex justify-center  items-center gap-10">
+<div id="article-detail" class="my-5 sm:my-10 py-5" style="display:none">
+    <div class="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-5 sm:gap-0 mb-10">
+        <div class="flex justify-between sm:justify-center items-center gap-10">
             <h2 class="text-lg text-gray-800 font-medium"><i class='fa-solid fa-circle-info'></i> Detail</h2>
             <form action="" method="POST" id="form-delete-article">
                 @csrf
@@ -8,7 +8,7 @@
                 <button type="submit" class="py-2 px-4 bg-red-500 hover:bg-red-600 text-white shadow rounded-lg">DELETE</button>
             </form>
         </div>
-        <div class="w-1/2 flex justify-center items-center gap-5">
+        <div class="w-full sm:w-1/2 flex justify-center items-center gap-5">
             <div class="w-1/2">
                 <label for="status" class="sr-only">Status</label>
                 <select id="status" data-value='' data-url="/admin/articles/updateStatusArticle/" name="status" class="block py-2.5 px-0 w-full text-sm text-gray-800 bg-transparent border-0 border-b-2 font-medium border-gray-800 appearance-none focus:outline-none focus:ring-0 peer">
@@ -28,8 +28,8 @@
     <form action="/admin/articles/updateArticle/" method="POST" data-slug='' enctype="multipart/form-data" id="form-update-article">
         @csrf
         <div class="mb-10">
-            <div class="flex gap-5">
-                <div class="w-1/2 aspect-video">
+            <div class="flex flex-col sm:flex-row gap-5">
+                <div class="w-full sm:w-1/2 aspect-video">
                     <img src="{{ asset('images/image-placeholder.png')}}" alt="Banner temporary" id="img-temp" class="w-full object-cover">
                 </div>
                 <div class="flex flex-col justify-between items-start gap-5">
@@ -50,15 +50,15 @@
         </div>
         <div class="mb-5">
             <div class="relative z-0 mb-6 w-full group">
-                <input type="text" name="title" id="title" class="block py-2.5 px-0 w-full text-gray-900 font-serif bg-transparent border-0 border-gray-300 appearance-none text-2xl focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                <input type="text" name="title" id="title" class="block py-2.5 px-0 w-full text-gray-900 font-serif bg-transparent border-0 border-gray-300 appearance-none text-lg sm:text-2xl focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
                 <label for="title" class="peer-focus:font-medium absolute text-2xl text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-sm peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Title</label>
             </div>
             <div id="message-title"></div>
         </div>
         <div class="mb-5">
             <div class="relative z-0 mb-6 w-full group">
-                <textarea name="description" id="description" class="block py-2.5 px-0 w-full text-gray-900 bg-transparent border-0 border-gray-300 appearance-none text-lg focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " onkeyup="textAreaAdjust(this)"  required></textarea>
-                <label for="description" class="peer-focus:font-medium absolute text-2xl text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-sm peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Description</label>
+                <textarea name="description" id="description" class="block py-2.5 px-0 w-full text-gray-900 bg-transparent border-0 border-gray-300 appearance-none text-sm sm:text-lg focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " onkeyup="textAreaAdjust(this)"  required></textarea>
+                <label for="description" class="peer-focus:font-medium absolute sm:text-2xl text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-sm peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Description</label>
             </div>
             <div id="message-description"></div>
         </div>
@@ -69,7 +69,7 @@
             </div>
             <div id="message-body"></div>
         </div>
-        <button type='submit' class="bg-gray-800 hover:bg-gray-900 text-white text-lg py-2 px-5 rounded shadow">Update Article</button>
+        <button type='submit' class="w-full sm:w-fit bg-gray-800 hover:bg-gray-900 text-white sm:text-lg py-2 px-5 rounded shadow">Update Article</button>
     </form>
 </div>
 
