@@ -1,5 +1,5 @@
 <div id="gallery-detail" class="detail mt-5">
-    <table id="table-gallery" class="text-sm display" data-url="{{ route('get-galleries') }}" style="width:100%">
+    <table id="table-gallery" class="text-xs sm:text-sm display" data-url="{{ route('get-galleries') }}" style="width:100%">
         <thead>
             <tr>
                 <th>Name</th>

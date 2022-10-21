@@ -1,4 +1,4 @@
-<div class="my-5 flex justify-center items-start gap-5 border-t border-gray-600 py-5">
+<div class="my-5 flex flex-col sm:flex-row justify-center items-start gap-5 border-t border-gray-600 py-5">
     <div class="flex-1">
         <p class="text-lg font-serif">Add New Photo</p>
         <div class="my-5">
