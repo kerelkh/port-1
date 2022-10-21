@@ -1,5 +1,5 @@
-<div id="quotes-detail" class="detail mt-5">
-    <table id="table-quotes" class="text-xs sm:text-sm display" data-url="{{ route('get-quotes') }}" style="width:100%">
+<div id="quotes-detail" class="detail mt-5 overflow-scroll">
+    <table id="table-quotes" class="w-[500px] sm:w-full text-xs sm:text-sm display" data-url="{{ route('get-quotes') }}">
         <thead>
             <tr>
                 <th>Quote</th>

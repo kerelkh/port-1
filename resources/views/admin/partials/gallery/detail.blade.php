@@ -18,7 +18,7 @@
                     @enderror
                 </div>
 
-                <img src="{{ asset('images/image-placeholder.png') }}" alt="Banner temporary" id="img-temp" class="w-1/2 aspect-video">
+                <img src="{{ asset('images/image-placeholder.png') }}" alt="Banner temporary" id="img-temp" class="w-full sm:w-1/2 aspect-video">
                 <div class="flex flex-col justify-between items-start gap-5">
                     <input
                         type="file"
@@ -62,7 +62,7 @@
                 <label for="update-photo_name" class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Name</label>
             </div>
 
-            <img src="{{ asset('images/image-placeholder.png') }}" alt="Banner temporary" id="img-temp-update" class="w-1/2 aspect-video">
+            <img src="{{ asset('images/image-placeholder.png') }}" alt="Banner temporary" id="img-temp-update" class="w-full sm:w-1/2 aspect-video">
             <div class="flex flex-col justify-between items-start gap-5">
                 <input
                     type="file"

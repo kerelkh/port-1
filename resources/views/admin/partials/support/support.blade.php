@@ -1,5 +1,5 @@
-<div id="support-detail" class="text-xs sm:text-sm md:text-base detail mt-5" style="display:none">
-    <table id="table-support" class="text-sm display overflow-scroll" data-url="{{ route('get-supports') }}" style="width:100%">
+<div id="support-detail" class="text-xs sm:text-sm md:text-base detail mt-5 overflow-scroll" style="display:none">
+    <table id="table-support" class="w-[500px] sm:w-full text-sm display overflow-scroll" data-url="{{ route('get-supports') }}">
         <thead>
             <tr>
                 <th>Name</th>
