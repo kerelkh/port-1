@@ -25,7 +25,7 @@
                 <h3 class="text-2xl w-full sm:w-3/4 mx-auto font-semibold mb-5">Contact Information.</h3>
                 <div class="flex flex-col justify-center w-3/4 mt-24 mx-auto">
                     <p class="text-lg mb-3"><i class="fa-solid fa-location-pin"></i> DKI Jakarta, Blok M</p>
-                    <p class="text-lg mb-3"><i class="fa-solid fa-envelope"></i> example@gmail.com</p>
+                    <p class="text-lg mb-3"><i class="fa-solid fa-envelope"></i> {{ auth()->user()->email }}</p>
                     <p class="text-lg mb-3"><i class="fa-solid fa-phone"></i> +62 812 92xx xxxx</p>
                 </div>
             </div>
