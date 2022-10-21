@@ -1,5 +1,5 @@
 <div id="quotes-detail" class="detail mt-5">
-    <table id="table-quotes" class="text-sm display" data-url="{{ route('get-quotes') }}" style="width:100%">
+    <table id="table-quotes" class="text-xs sm:text-sm display" data-url="{{ route('get-quotes') }}" style="width:100%">
         <thead>
             <tr>
                 <th>Quote</th>
