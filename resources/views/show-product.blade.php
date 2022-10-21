@@ -19,7 +19,7 @@
             <div class="grid grid-cols-3">
                 <div class="col-span-3 sm:col-span-2">{!! $datas['product']->description !!}</div>
                 <div class="col-span-3 sm:col-span-1 flex justify-center items-center mt-10 sm:mt-0">
-                    <a href="https://wa.me/6281234567890" class="text-2xl py-2 px-4 shadow-lg rounded-lg text-white bg-green-500 hover:bg-green-600 transition"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                    <a href="https://wa.me/{{ auth()->user()->phone ?? '-' }}" class="text-2xl py-2 px-4 shadow-lg rounded-lg text-white bg-green-500 hover:bg-green-600 transition"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                 </div>
             </div>
         </div>

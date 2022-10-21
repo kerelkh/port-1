@@ -42,6 +42,24 @@
                         @enderror
                     </div>
                 </div>
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center mb-2">
+                    <label for="address" class="flex-1">Address</label>
+                    <div class="flex-1 flex flex-col items-stretch">
+                        <input type="text" name="address" id="address" value="{{ Auth::user()->address }}" autocomplete="off" required class="px-2 py-1 rounded-lg outline-none focus:ring-1 focus:ring-blue-400 bg-gray-200 focus:bg-white">
+                        @error('address')
+                            <span class="text-red-600 text-sm italic">* {{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center mb-2">
+                    <label for="phone" class="flex-1">Phone Number</label>
+                    <div class="flex-1 flex flex-col items-stretch">
+                        <input type="text" name="phone" id="phone" value="{{ Auth::user()->phone }}" autocomplete="off" required placeholder="Ex. 62812XXXXXXXX" class="px-2 py-1 rounded-lg outline-none focus:ring-1 focus:ring-blue-400 bg-gray-200 focus:bg-white">
+                        @error('phone')
+                            <span class="text-red-600 text-sm italic">* {{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-center mb-2 mt-8">
                     <label for="password" class="flex-1">Current Password</label>
                     <div class="flex-1 flex flex-col items-stretch">

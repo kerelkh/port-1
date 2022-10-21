@@ -29,14 +29,18 @@ class SettingController extends Controller
 
             if($request->username == Auth::user()->username &&
             $request->name == Auth::user()->name &&
-            $request->email == Auth::user()->email){
+            $request->email == Auth::user()->email &&
+            $request->address == Auth::user()->address &&
+            $request->phone == Auth::user()->phone){
                 return back()->with('update-profile-error', 'Your input same, nothing change');
             }
 
             $user = User::where('id', Auth::user()->id)->update([
                 'username' => strtolower($request->username),
                 'name' => strtolower($request->name),
-                'email' => strtolower($request->email)
+                'email' => strtolower($request->email),
+                'address' => strtolower($request->address),
+                'phone' => $request->phone
             ]);
 
             if($user){
