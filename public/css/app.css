@@ -2446,6 +2446,11 @@ input:checked + .toggle-bg {
     margin-bottom: 0.5rem;
   }
 
+  .sm\:my-5 {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
   .sm\:mt-5 {
     margin-top: 1.25rem;
   }
@@ -2456,6 +2461,10 @@ input:checked + .toggle-bg {
 
   .sm\:ml-0 {
     margin-left: 0px;
+  }
+
+  .sm\:mt-2 {
+    margin-top: 0.5rem;
   }
 
   .sm\:block {
