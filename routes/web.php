@@ -101,7 +101,7 @@ Route::get('/quotes', [QuoteController::class, 'index'])->name('quotes');
 Route::get('/gallery', [GalleryController::class, 'index'])->name('photos');
 
 Route::get('/products', [ProductController::class, 'index'])->name('products');
-Route::get('/products/{slug}', [ProductController::class, 'getProduct'])->name('get-product');
+Route::get('/products/{slug}', [ProductController::class, 'getProduct']);
 
 Route::fallback(function(){
     return redirect('/');
