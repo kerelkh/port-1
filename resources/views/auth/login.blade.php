@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="mt-10 h-full flex justify-center items-center">
-        <div class="w-[720px] aspect-video rounded-lg shadow-lg bg-white flex">
+        <div class="mt-20 sm:mt-10 w-[720px] aspect-video rounded-lg shadow-lg bg-white flex">
             <div class="flex-1 flex flex-col justify-center items-stretch">
                 <div class="w-5/6 mx-auto">
                     @if(session('error'))
@@ -36,7 +36,7 @@
                     <p class="text-sm text-gray-600 text-center mt-5">&copy; Copyright 2022 by RINGGA.ID</p>
                 </div>
             </div>
-            <div class="flex-1 overflow-hidden">
+            <div class="hidden sm:block flex-1 overflow-hidden">
                 <img src="{{ asset('images/login-bg.webp') }}" alt="login background" class="w-full h-full object-cover">
             </div>
         </div>

@@ -1096,6 +1096,9 @@ input:checked + .toggle-bg {
 .-mt-px {
   margin-top: -1px;
 }
+.mt-20 {
+  margin-top: 5rem;
+}
 .mb-6 {
   margin-bottom: 1.5rem;
 }
@@ -2466,6 +2469,10 @@ input:checked + .toggle-bg {
 
   .sm\:mt-2 {
     margin-top: 0.5rem;
+  }
+
+  .sm\:mt-10 {
+    margin-top: 2.5rem;
   }
 
   .sm\:mt-24 {
