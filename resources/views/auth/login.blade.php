@@ -33,7 +33,7 @@
                             <button type="submit" class="text-center p-2 bg-gray-800 hover:shadow-lg rounded-xl text-white transition">Login</button>
                         </div>
                     </form>
-                    <p class="text-sm text-gray-600 text-center mt-5">&copy; Copyright by {{ env('APP_NAME') }}</p>
+                    <p class="text-sm text-gray-600 text-center mt-5">&copy; Copyright 2022 by RINGGA.ID</p>
                 </div>
             </div>
             <div class="flex-1 overflow-hidden">

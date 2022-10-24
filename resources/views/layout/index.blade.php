@@ -56,17 +56,17 @@
     </style>
 </head>
 <body>
-    <div id="app" class="w-screen pb-10 overflow-hidden">
+    <div id="app" class="w-screen overflow-hidden">
         <x-navtop></x-navtop>
         <div class="min-h-screen">
             @yield('content')
         </div>
         @include('templates.loading')
-        <footer class="w-full bg-white border-t-2 mt-10">
+        <footer class="w-full bg-gray-100 border-t-2 mt-10">
             <div class="w-5/6 mx-auto py-10 grid grid-cols-1 sm:grid-cols-3">
                 <div class="col-span-1">
                     <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-2/4">
-                    <p class="p-2 text-center text-gray-100 text-xs bg-gray-800">&copy; Copyright by Ringga.Net</p>
+                    <p class="p-2 text-center text-gray-100 text-xs bg-gray-800">&copy; Copyright 2022 by RINGGA.ID</p>
                 </div>
                 <div class="col-span-2">
 

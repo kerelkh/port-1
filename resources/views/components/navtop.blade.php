@@ -7,9 +7,6 @@
             </a>
         </div>
         <div class="flex justify-center items-center space-x-3">
-            @guest
-                <a href="/login" class="text-sm py-1 px-2 border border-gray-400 text-gray-800 rounded-lg hover:bg-gray-700 hover:text-white transition"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
-            @endguest
             @auth
             <div class="relative">
                 <button class="font-serif border-b border-gray-400 font-medium text-sm text-gray-600 hover:text-gray-900" id="admin-toggle-btn" data-toggle="admin-menu">Hi, {{ Auth::user()->name }} <i class="caret fa-solid fa-caret-right"></i><i class="caret hidden fa-solid fa-caret-down"></i></button>
